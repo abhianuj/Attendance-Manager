@@ -1,4 +1,4 @@
-# attendance manager
+# attendance manager(only for mobile)
 It is a simple pwa which helps in managing attendance.
 It works offline once pwa is installed.
 Add your first name and attendance perecentage criteria.
