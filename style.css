@@ -1,0 +1,387 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    user-select: none;
+    padding: 0;
+}
+
+body{
+    position: relative;
+    font-family: sans-serif;
+    width: 100vw;
+}
+
+/*first page done here*/
+#container1{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(22deg , #222255, #444477);
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    transition: all 0.2s;
+    z-index: 2;
+}
+
+#fa-skull{
+    display: block;
+    width: 44vw;
+    margin: 22vw auto 5vw auto;
+}
+
+#container1 input{
+    display: block;
+    font-size: 1.4em;
+    background-color: inherit;
+    color: #EFEFEF;
+    padding: 2vw;
+    outline: none;
+    width: 64vw;
+    border: none;
+    text-align: center;
+    border-bottom: 1px solid #EEEEEE;
+    margin: 5vw auto;
+    position: relative;
+}
+
+#container1 label{
+    color: #EFEFEF;
+    font-size: 1.1em;
+    font-family: sans-serif;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -220%);
+    transition: all 0.2s;
+}
+
+#next, #add{
+    height: 12vw;
+    width: 12vw;
+    background-color: rgb(220, 70, 70);
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.2);
+    border-radius: 50%;
+    position: absolute;
+    content: '';
+    bottom: 17vw;
+    right: 14vw;
+}
+#next:focus, #add:focus{
+    border: none;
+}
+#next::after{
+    position: absolute;
+    height: 3vw;
+    width: 3vw;
+    border: 2px solid white;
+    border-bottom: none;
+    border-left: none;
+    top: 4vw;
+    right: 3.8vw;
+    transform: rotate(45deg);
+    content: '';
+}
+#next::before{
+    content: '';
+    position: absolute;
+    height: 0.7vw;
+    width: 5vw;
+    background-color: white;
+    top: 5.6vw;
+    right: 4vw;
+}
+
+.sex{
+    color: #EFEFEF;
+    font-size: 1.1em;
+    font-family: sans-serif;
+}
+
+#sex1{
+    margin-right: 5vw;
+}
+
+#container1 input[type="radio"]{
+    display: inline-block;
+    width: 4vw;
+    margin: 2.8vw;
+}
+
+#container1 input[value="Male"]{
+    margin-left: 25vw;
+}
+
+
+/*Second container*/
+#container2{
+    position: relative;
+    background-color: #EFEFEF;
+    width: 100vw;
+    height: auto;
+}
+
+#men{
+    width: 22vw;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 7vw;
+}
+
+#profile{
+    height: 44vw;
+    background: linear-gradient(to top, #FFCB36, #FFDB77);
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1);
+    font-size: 1.9rem;
+    font-family: sans-serif;
+    color: white;
+    position: relative;
+}
+
+#profile-id{
+    position: absolute;
+    top: 34%;
+    right: 11vw;
+    text-align: right;
+    line-height: 2.2rem;
+    letter-spacing: 0.1rem;
+    text-shadow: 1px 2px 2px rgba(0,0,0,0.1);
+}
+
+#total{
+    font-size: 0.9rem;
+}
+
+/*add subject button side*/
+#add{
+    bottom: 0;
+    transform: translateY(50%);
+    right: 11vw;
+}
+#add::after, #add::before{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 38%;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#add::before{
+    height: 38%;
+    width: 2px;
+}
+
+/*popup for adding subjects*/
+#popAdd{
+    position: absolute;
+    top: 31%;
+    left: 10%;
+    transform: translate(-50%,-50%);
+    width: 80vw;
+    height: auto;
+    padding: 10vw 0;
+    background-color: rgb(255,255,255,1);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    border: 1px solid #EAEAEA;
+    transform: scale(0);
+    transition: transform 0.2s cubic-bezier(0.5, 0.2, 0.8, 1.4);
+}
+#addsInput{
+    font-size: 1.4em;
+    background-color: rgba(255,255,255,0.1);
+    color: #777777;
+    outline: none;
+    width: 60vw;
+    border: none;
+    text-align: center;
+    border-bottom: 1px solid #DDDDDD;
+    padding: 1.1vw;
+    margin: 4vw 10vw;
+    transition: all 0.2s;
+}
+#addsInput:focus{
+    color: #2E2E2E;
+    border-bottom-color: #2E2E2E;
+}
+#adds{
+    width: 20vw;
+    text-align: center;
+    margin: 1vw auto;
+    padding: 2vw;
+    border-radius: 2px;
+    background-color: white;
+    color: #222222;
+    border: 1px solid #AAAAAA;
+}
+#adds:hover{
+    color: white;
+    background-color: #222222;
+    border-color: #222222;
+}
+#close{
+    background-color: inherit;
+    height: 10vw;
+    width: 10vw;
+    content: '';
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+}
+#close::after, #close::before{
+    content: '';
+    background-color: #222222;
+    position: absolute;
+    height: 2px;
+    width: 55%;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    transform: rotate(-45deg);
+}
+#close::after{
+    transform: rotate(45deg);
+}
+
+/*subjects are stored here*/
+#mainsUnder{
+    width: 100vw;
+    overflow-y: scroll;
+    padding-top: 5vw;
+}
+#mains{
+    overflow: hidden;
+}
+
+.first{
+    background-color: #FFFFFF;
+    margin: 4vw;
+    border-radius: 2px;
+    color: #444444;
+    font-family: sans-serif;
+    padding: 3.4vw 4vw;
+    border: 1px solid #DDDDDD;
+}
+.head{
+    font-size: 2rem;
+    padding-left: 1vw;
+}
+.sper{
+    float: right;
+    font-size: 1.4rem;
+    padding-top: 1vw;
+    color: green;
+}
+.data{
+    border-top:1px solid #EAEAEA;
+    padding: 2vw;
+    margin-top: 1vw;
+    font-size: 0.9rem;
+}
+.stats{
+    float: right;
+}
+/* Popup to take attendance */
+#popAttendence{
+    content: '';
+    position: absolute;
+    top: 44%;
+    left: 18%;
+    font-size: 0.9rem;
+    height: auto;
+    z-index: 2;
+    width: 64vw;
+    background-color: rgba(255,255,255,1);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    transform: scale(0);
+    transition: transform 0.2s cubic-bezier(0.5, 0.2, 0.8, 1.4);
+}
+
+#present, #absent{
+    height: 100%;
+    width: 50%;
+    float: left;
+    text-align: center;
+    margin: 4vw 0 4vw 0;
+}
+
+#closeAttendance{
+    content: '';
+    position: absolute;
+    height: 10vw;
+    width: 10vw;
+    right: 0;
+}
+#closeAttendance::after, #closeAttendance::before{
+    content: '';
+    background-color: #222222;
+    position: absolute;
+    height: 2px;
+    width: 55%;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    transform: rotate(-45deg);
+}
+#closeAttendance::after{
+    transform: rotate(45deg);
+}
+
+#present > div, #absent > div{
+    content: '';
+    opacity: 0.6;
+    position: relative;
+    height: 10vw;
+    width: 10vw;
+    margin: 5vw auto 2vw auto;
+    background-color: green;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.2);
+}
+#absent > div{
+    background-color: red;
+}
+#present > div::after{
+    position: absolute;
+    content: '';
+    height: 44%;
+    width: 20%;
+    left: 32%;
+    top: 12%;
+    border: 2px solid #FAFAFA;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    transform: rotate(31deg);
+}
+#absent > div::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 38%;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#men{
+    border-bottom: 2px solid black;
+}
+
+.refresh{
+    position: absolute;
+    content: '';
+    background-color: rgba(140, 140, 140, 0.1);
+    right: 5vw;
+    top: 5vw;
+    height: 2vw;
+    width: 2vw;
+    border-radius: 50%;
+}
+
+/*hiding unsuseful labels*/
+#container1 .hide{
+    color: transparent;
+}
